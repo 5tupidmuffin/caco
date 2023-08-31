@@ -5,7 +5,7 @@
 <div>
 	<ul>
 		{#each $TodoStore as todo (todo.id)}
-			<li>
+			<li class={todo.isCompleted && 'taskCompleted'}>
 				<div
 					class={`custom-checkbox`}
 					aria-checked={todo.isCompleted}
@@ -58,6 +58,16 @@
 	li:hover {
 		background-color: #403d39;
 	}
+
+	.taskCompleted {
+		background-color: #23ce6b;
+		color: black;
+	}
+
+	.taskCompleted:hover {
+		background-color: #23ce6ab7;
+	}
+
 	.custom-checkbox {
 		height: 100%;
 		width: 4rem;
