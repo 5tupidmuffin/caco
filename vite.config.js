@@ -1,12 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
 
-export default defineConfig({
-	base: '/caco/',
-	kit: {
-		paths: {
-			base: '/caco'
-		}
-	},
-	plugins: [sveltekit()]
-});
+/** @type {import('vite').UserConfig} */
+const config = {
+	plugins: [sveltekit()],
+	base: '/caco/'
+};
+
+export default config;
