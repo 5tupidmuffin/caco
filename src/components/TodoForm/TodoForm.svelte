@@ -2,7 +2,7 @@
 	import { addTodo } from '../../stores/todoStore';
 
 	let task = '';
-	const onSubmitHandler = (e) => {
+	const onSubmitHandler = () => {
 		addTodo(task);
 		task = '';
 	};
