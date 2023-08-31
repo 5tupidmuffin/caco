@@ -18,6 +18,7 @@ jobs:
           npm ci
           npm run lint
           npm run build
+          touch build/.nojekyll
 
       - name: Deploy
         # https://github.com/JamesIves/github-pages-deploy-action
