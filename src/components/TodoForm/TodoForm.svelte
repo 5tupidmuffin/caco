@@ -57,4 +57,15 @@
 	button:hover {
 		background-color: #23ce6a75;
 	}
+
+	@media screen and (max-width: 600px) {
+		input[type='text'] {
+			width: 90%;
+			font-size: 1rem;
+		}
+
+		button {
+			width: 96%;
+		}
+	}
 </style>

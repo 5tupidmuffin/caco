@@ -91,4 +91,24 @@
 	button:hover {
 		background-color: #eb5f28cb;
 	}
+
+	@media screen and (max-width: 600px) {
+		ul {
+			width: 95%;
+		}
+
+		li {
+			font-size: 1.1rem;
+			height: 2.5rem;
+		}
+
+		.custom-checkbox {
+			height: 100%;
+			width: 15%;
+		}
+
+		button {
+			width: 15%;
+		}
+	}
 </style>
