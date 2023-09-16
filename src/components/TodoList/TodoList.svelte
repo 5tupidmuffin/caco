@@ -1,16 +1,16 @@
 <script>
-	import TodoStore, { updateTaskStatus, deleteTask } from '../../stores/todoStore';
+	import TodoStore, { updateTodoStatus, deleteTodo } from '../../stores/todoStore';
 </script>
 
 <div>
 	<ul>
 		{#each $TodoStore as todo (todo.id)}
-			<li class={todo.isCompleted && 'taskCompleted'}>
+			<li class={todo.isCompleted && 'todoCompleted'}>
 				<div
 					class={`custom-checkbox`}
 					aria-checked={todo.isCompleted}
-					on:click={() => updateTaskStatus(todo.id)}
-					on:keypress={() => updateTaskStatus(todo.id)}
+					on:click={() => updateTodoStatus(todo.id)}
+					on:keypress={() => updateTodoStatus(todo.id)}
 					tabindex="0"
 					role="checkbox"
 				>
@@ -18,8 +18,8 @@
 						<img src="./assets/images/done_check.svg" alt="done check" />
 					{/if}
 				</div>
-				{todo.task}
-				<button type="button" on:click={() => deleteTask(todo.id)}>
+				{todo.todo}
+				<button type="button" on:click={() => deleteTodo(todo.id)}>
 					<img src="./assets/images/delete_bin.svg" alt="delete bin" /></button
 				>
 			</li>
@@ -59,12 +59,12 @@
 		background-color: #403d39;
 	}
 
-	.taskCompleted {
+	.todoCompleted {
 		background-color: #23ce6b;
 		color: black;
 	}
 
-	.taskCompleted:hover {
+	.todoCompleted:hover {
 		background-color: #23ce6ab7;
 	}
 

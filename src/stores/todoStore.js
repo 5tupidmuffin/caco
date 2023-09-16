@@ -2,51 +2,51 @@ import { writable } from 'svelte/store';
 
 const TODOS_LOCAL_STORAGE_KEY = 'CACO_TODOS';
 
-const getTasksFromLocalStorage = () => {
+const getTodosFromLocalStorage = () => {
 	if (typeof localStorage == 'undefined') return [];
-	const tasks = JSON.parse(localStorage.getItem(TODOS_LOCAL_STORAGE_KEY) || '[]');
-	return tasks;
+	const todos = JSON.parse(localStorage.getItem(TODOS_LOCAL_STORAGE_KEY) || '[]');
+	return todos;
 };
 
-const updateLocalStorageTasks = (tasks) => {
+const updateLocalStorageTodos = (todos) => {
 	if (typeof localStorage == 'undefined') return;
-	Array.isArray(tasks) && localStorage.setItem(TODOS_LOCAL_STORAGE_KEY, JSON.stringify(tasks));
+	Array.isArray(todos) && localStorage.setItem(TODOS_LOCAL_STORAGE_KEY, JSON.stringify(todos));
 };
 
-const TodoStore = writable(getTasksFromLocalStorage());
+const TodoStore = writable(getTodosFromLocalStorage());
 
-TodoStore.subscribe((updatedTasks) => {
-	updateLocalStorageTasks(updatedTasks);
+TodoStore.subscribe((updatedTodos) => {
+	updateLocalStorageTodos(updatedTodos);
 });
 
-export const addTodo = (task) => {
+export const addTodo = (todo) => {
 	TodoStore.update((curr) => {
-		const newTask = {
-			task,
+		const newTodo = {
+			todo,
 			isCompleted: false,
 			id: crypto.randomUUID()
 		};
-		return [...curr, newTask];
+		return [...curr, newTodo];
 	});
 };
 
-export const updateTaskStatus = (taskID) => {
+export const updateTodoStatus = (todoID) => {
 	TodoStore.update((curr) => {
-		return curr.map((task) => {
-			if (task.id !== taskID) {
-				return task;
+		return curr.map((todo) => {
+			if (todo.id !== todoID) {
+				return todo;
 			} else {
-				const updatedTask = task;
-				updatedTask.isCompleted = !updatedTask.isCompleted;
-				return updatedTask;
+				const updatedTodo = todo;
+				updatedTodo.isCompleted = !updatedTodo.isCompleted;
+				return updatedTodo;
 			}
 		});
 	});
 };
 
-export const deleteTask = (taskID) => {
+export const deleteTodo = (todoID) => {
 	TodoStore.update((curr) => {
-		return curr.filter((task) => task.id !== taskID);
+		return curr.filter((todo) => todo.id !== todoID);
 	});
 };
 

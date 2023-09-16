@@ -1,16 +1,16 @@
 <script>
 	import { addTodo } from '../../stores/todoStore';
 
-	let task = '';
+	let todo = '';
 	const onSubmitHandler = () => {
-		addTodo(task);
-		task = '';
+		addTodo(todo);
+		todo = '';
 	};
 </script>
 
 <form on:submit|preventDefault={onSubmitHandler} action="#">
 	<h2>Caco</h2>
-	<input type="text" bind:value={task} placeholder="your task..." required /><br />
+	<input type="text" bind:value={todo} placeholder="your todo..." required /><br />
 	<button>+</button>
 </form>
 
