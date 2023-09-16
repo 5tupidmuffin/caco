@@ -1,5 +1,13 @@
 <script>
+	import { dev } from '$app/environment';
 	import App from '../components/App/App.svelte';
+
+	if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+		navigator.serviceWorker.register('service-worker.js', {
+			scope: '/caco',
+			type: dev ? 'module' : 'classic'
+		});
+	}
 </script>
 
 <App />
