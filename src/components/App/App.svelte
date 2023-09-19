@@ -1,6 +1,7 @@
 <script>
 	import TodoForm from '../TodoForm/TodoForm.svelte';
 	import TodoList from '../TodoList/TodoList.svelte';
+	import GithubCorner from '../GithubCorner.svelte';
 </script>
 
 <svelte:head>
@@ -9,6 +10,7 @@
 <main class="main-container">
 	<TodoForm />
 	<TodoList />
+	<GithubCorner />
 </main>
 
 <style>

@@ -8,3 +8,4 @@ A Todolist PWA made in Svelte
 - Delete Icon: https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Adelete
 - Done Checkmark Icon: https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Adone
 - Cacodemon Image: https://doom.fandom.com/wiki/Cacodemon/Doom
+- Github Corner: https://tholman.com/github-corners/
