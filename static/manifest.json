@@ -16,7 +16,7 @@
 		}
 	],
 	"orientation": "any",
-	"display": "minimal-ui",
+	"display": "standalone",
 	"dir": "auto",
 	"lang": "en-US",
 	"name": "Caco - Todolist",
